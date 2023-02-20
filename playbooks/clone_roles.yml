@@ -5,7 +5,7 @@
 
   vars:
     git_repository: "https://github.com/rvvaar/Ansible_roles.git"
-    git_branch: "main"
+    git_branch: "master"
   
   tasks:
     - name: Utworz folder /etc/ansible/roles
