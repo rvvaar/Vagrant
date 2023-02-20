@@ -1,0 +1,22 @@
+---
+- name: Wstepna konfiguracja
+  hosts: all
+  become: true
+
+  vars:
+    git_repository: "https://github.com/rvvaar/Ansible_roles.git"
+    git_branch: "main"
+  
+  tasks:
+    - name: Utworz folder /etc/ansible/roles
+      file:
+        path: /etc/ansible/roles
+        state: directory
+        mode: "0755"
+
+    - name: Checkout odpowiedniej galezi
+      git:
+        repo: "{{ git_repository }}"
+        dest: "/etc/ansible/roles"
+        version: "{{ git_branch }}"
+  
